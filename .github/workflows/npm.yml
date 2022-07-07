@@ -1,4 +1,4 @@
-name: Trigger appleboy
+name: Trigger
 on:
   push:
     paths:

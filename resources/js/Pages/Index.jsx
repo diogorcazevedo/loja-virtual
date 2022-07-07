@@ -11,9 +11,9 @@ export default function Index({destaques }) {
     <Store user={auth.user} errors={errors}>
       <Head title="Home" />
 
-      <div className="pt-28 bg-blend-lighten">
+      <div className="pt-28 bg-gray-600">
         {destaques.map((destaque) => (
-          <div key={destaque.id} className="mb-16">
+          <div key={destaque.id} className="mb-16 bg-gray-600">
             <Link href={route('store.collection', { collection: destaque.slug })}>
               <div aria-hidden="true" className=" w-full">
                 <img
@@ -21,7 +21,7 @@ export default function Index({destaques }) {
                   alt=""
                   className="w-full object-center object-cover"
                 />
-                <h1 className="ml-4 mt-4 mb-12 text-3xl tracking-wide">COLEÇÃO {destaque.name}</h1>
+                <h1 className="ml-4 mt-4 mb-12 text-3xl tracking-wide bg-gray-600">COLEÇÃO {destaque.name}</h1>
               </div>
             </Link>
           </div>

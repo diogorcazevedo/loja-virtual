@@ -11,7 +11,7 @@ export default function Index({destaques }) {
     <Store user={auth.user} errors={errors}>
       <Head title="Home" />
 
-      <div className="pt-28">
+      <div className="pt-28 bg-blend-lighten">
         {destaques.map((destaque) => (
           <div key={destaque.id} className="mb-16">
             <Link href={route('store.collection', { collection: destaque.slug })}>

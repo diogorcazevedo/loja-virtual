@@ -1,14 +1,19 @@
-name: Trigger Jenkins Build [ Build-Portal ]
+name: Trigger appleboy
 on:
   push:
     paths:
       - 'resources/js/**'
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
-    name: yarn build
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
-      - run: npm install
-      - run: npm run prod
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.APP_HOST }}
+          username: ${{ secrets.APP_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd institutodeselecao.org.br
+            npm run prod

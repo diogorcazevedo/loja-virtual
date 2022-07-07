@@ -1,0 +1,13 @@
+on:
+  push:
+    paths:
+      - 'resources/js/*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: yarn build
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - run: npm install
+      - run: npm run prod

@@ -1,7 +1,8 @@
+name: Trigger Jenkins Build [ Build-Portal ]
 on:
   push:
     paths:
-      - 'resources/js/*'
+      - 'resources/js/**'
 jobs:
   build:
     runs-on: ubuntu-latest

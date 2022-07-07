@@ -21,7 +21,7 @@ export default function Index({destaques }) {
                   alt=""
                   className="w-full object-center object-cover"
                 />
-                <h1 className="ml-4 mt-4 mb-12 text-3xl tracking-wide">COLEÇÃO {destaque.name}</h1>
+                <h1 className="ml-4 mt-4 mb-12 text-3xl tracking-wide bg-teal-900">DWWWWW {destaque.name}</h1>
               </div>
             </Link>
           </div>

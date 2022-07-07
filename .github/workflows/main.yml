@@ -1,0 +1,18 @@
+on: [push]
+
+jobs:
+  upload_files:
+    runs-on: ubuntu-latest
+    name: Upload a builded file.
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: deploy
+        id: funny-deploy
+        uses: BoatNg/funny-deploy@master
+        env:
+          REMOTE_HOST: ${{ secrets.APP_HOST }}
+          REMOTE_USER: ${{ secrets.APP_USER }}
+          REMOTE_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+          REMOTE_PATH: "/home/institutoselecao/institutodeselecao.org.br/"
+          SOURCE: "/"

@@ -1,9 +1,7 @@
-name:Yarn Workflow
 on:
   push:
     paths:
       - 'resources/js/*'
-
 jobs:
   build:
     runs-on: ubuntu-latest

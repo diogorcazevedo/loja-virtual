@@ -37,7 +37,8 @@ class Collection extends Model
 
     public function images()
     {
-        return $this->morphToMany(Image::class, 'imageable');
+        return $this->hasMany(CollectionImages::class);
+
     }
 
 

@@ -17,7 +17,7 @@ export default function Index({destaques }) {
             <Link href={route('store.collection', { collection: destaque.slug })}>
               <div aria-hidden="true" className=" w-full">
                 <img
-                  src={"/storage/images/" + destaque.images[0]?.id + '.' + destaque.images[0]?.extension}
+                  src={"https://carlabuaizjoias.s3.sa-east-1.amazonaws.com/"+destaque.images[0]?.path}
                   alt=""
                   className="w-full object-center object-cover"
                 />

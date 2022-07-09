@@ -54,19 +54,20 @@ Route::get('user/password/{user}',                          [UserController::cla
 Route::get('user/update_password/{user}',                   [UserController::class, 'update_password'])->name('user.update.password')->middleware(['auth', 'verified']);
 
 
-Route::get('institucional/garantia',                        [InstitucionalController::class, 'garantia'])->name('institucional.garantia');
-Route::get('institucional/devolucao_reembolso',             [InstitucionalController::class, 'devolucao_reembolso'])->name('institucional.devolucao.reembolso');
-Route::get('institucional/politica_de_privacidade',         [InstitucionalController::class, 'politica_de_privacidade'])->name('institucional.politica.privacidade');
-Route::get('institucional/termos_de_servico',               [InstitucionalController::class, 'termos_de_servico'])->name('institucional.termos.servico');
-Route::get('institucional/designer/123',                    [InstitucionalController::class, 'designer'])->name('institucional.designer');
-Route::get('institucional/enderecos/123',                   [InstitucionalController::class, 'enderecos'])->name('institucional.enderecos');
-Route::get('institucional/clipping/123',                    [InstitucionalController::class, 'clipping'])->name('institucional.clipping');
-Route::get('institucional/clip/{clip}',                     [InstitucionalController::class, 'clip'])->name('institucional.clip');
-Route::get('institucional/events',                          [InstitucionalController::class, 'events'])->name('institucional.events');
-Route::get('institucional/event/{event}}',                  [InstitucionalController::class, 'event'])->name('institucional.event');
-Route::get('institucional/peoples',                         [InstitucionalController::class, 'peoples'])->name('institucional.peoples');
-Route::get('institucional/people/{pessoa}',                 [InstitucionalController::class, 'people'])->name('institucional.people');
-Route::get('institucional/destaque/{destaque}',             [InstitucionalController::class, 'destaque'])->name('institucional.destaque');
+Route::get('institutional/garantia',                        [InstitucionalController::class, 'garantia'])->name('institutional.garantia');
+Route::get('institutional/devolucao_reembolso',             [InstitucionalController::class, 'devolucao_reembolso'])->name('institutional.devolucao.reembolso');
+Route::get('institutional/privacy',                         [InstitucionalController::class, 'privacy'])->name('institutional.privacy');
+Route::get('institutional/terms',                           [InstitucionalController::class, 'terms'])->name('institutional.terms');
+
+Route::get('institutional/designer/123',                    [InstitucionalController::class, 'designer'])->name('institutional.designer');
+Route::get('institutional/enderecos/123',                   [InstitucionalController::class, 'enderecos'])->name('institutional.enderecos');
+Route::get('institutional/clipping/123',                    [InstitucionalController::class, 'clipping'])->name('institutional.clipping');
+Route::get('institutional/clip/{clip}',                     [InstitucionalController::class, 'clip'])->name('institutional.clip');
+Route::get('institutional/events',                          [InstitucionalController::class, 'events'])->name('institutional.events');
+Route::get('institutional/event/{event}}',                  [InstitucionalController::class, 'event'])->name('institutional.event');
+Route::get('institutional/peoples',                         [InstitucionalController::class, 'peoples'])->name('institutional.peoples');
+Route::get('institutional/people/{pessoa}',                 [InstitucionalController::class, 'people'])->name('institutional.people');
+Route::get('institutional/highlight/{highlight}',           [InstitucionalController::class, 'highlight'])->name('institutional.highlight');
 
 
 Route::get('image/download/{id}',                                   [ImageController::class, 'download'])->name('image.download');

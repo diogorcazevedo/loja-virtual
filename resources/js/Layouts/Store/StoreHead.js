@@ -6,10 +6,10 @@ import { Link } from '@inertiajs/inertia-react';
 
 const navigation = {
   pages: [
-    { name: 'Coleções', href: '#' },
-    { name: 'Brincos', href: '#' },
-    { name: 'Anéis', href: '#' },
-    { name: 'Colares', href: '#' },
+    { name: 'Coleções', href: route('store.collections') },
+    { name: 'Brincos', href: route('store.category',{category:2}) },
+    { name: 'Anéis', href: route('store.category',{category:1}) },
+    { name: 'Colares', href: route('store.category',{category:3}) },
     { name: 'Clipping', href: '#' },
     { name: 'Endereços', href: '#' },
   ],

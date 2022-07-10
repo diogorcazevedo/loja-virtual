@@ -1,5 +1,5 @@
 import { Popover } from '@headlessui/react'
-import { MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline'
+import { ShoppingBagIcon } from '@heroicons/react/outline'
 import { Link } from '@inertiajs/inertia-react';
 import MobileNavBar from "@/Layouts/Store/MobileNavBar";
 
@@ -19,11 +19,9 @@ const navigation = {
 
 export default function Header({user}) {
 
-
   return (
     <div className="bg-white">
       {/* Mobile menu */}
-        <MobileNavBar navigation={navigation}/>
 
       {/* Hero section */}
       <div className="relative bg-white">
@@ -31,8 +29,6 @@ export default function Header({user}) {
         {/* Navigation */}
         <header className="relative">
           <nav aria-label="Top" className='fixed top-0 z-50 left-0 right-0'>
-
-
             {/* Secondary navigation */}
             <div className="bg-white pt-6 pb-6">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,7 +37,7 @@ export default function Header({user}) {
                     {/* Logo (lg+) */}
                     <div className="hidden lg:flex-1 lg:flex lg:items-center">
                       <a href="/">
-                        <span className="sr-only">Workflow</span>
+                        <span className="sr-only">carla buaiz</span>
                         <img
                           className="h-28 w-auto"
                           src="/img/logo.svg"
@@ -54,7 +50,6 @@ export default function Header({user}) {
                       {/* Flyout menus */}
                       <Popover.Group className="px-4 bottom-0 inset-x-0">
                         <div className="h-full flex justify-center space-x-8">
-
 
                           {navigation.pages.map((page,index) => (
                             <Link
@@ -76,36 +71,11 @@ export default function Header({user}) {
                       </Popover.Group>
                     </div>
 
-                    {/* Mobile menu and search (lg-) */}
-                    <div className="flex-1 flex items-center lg:hidden">
-                      <button type="button" className="-ml-2 p-2 text-dark" onClick={() => setMobileMenuOpen(true)}>
-                        <span className="sr-only">Open menu</span>
-                        <MenuIcon className="h-6 w-6" aria-hidden="true" />
-                      </button>
-
-                      {/* Search */}
-                      <a href="#" className="ml-2 p-2 text-dark">
-                        <span className="sr-only">Search</span>
-                        <SearchIcon className="w-6 h-6" aria-hidden="true" />
-                      </a>
-                    </div>
-
-                    {/* Logo (lg-) */}
-                    <a href="#" className="lg:hidden">
-                      <span className="sr-only">Workflow</span>
-                      <img
-                        src="/img/logo.svg"
-                       // src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white"
-                        alt=""
-                        className="h-20 w-auto"
-                      />
-                    </a>
+                      <MobileNavBar navigation={navigation}/>
 
                     <div className="flex-1 flex items-center justify-end">
 
-
                       <div className="flex items-center lg:ml-8">
-
 
                           {user ? (
                             <Link href={route('dashboard')} className="text-sm text-gray-700 underline hidden lg:block inline-flex">

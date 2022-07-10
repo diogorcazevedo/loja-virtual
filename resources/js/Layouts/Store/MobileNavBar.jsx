@@ -1,14 +1,43 @@
 import {Dialog, Transition} from "@headlessui/react";
-import {XIcon} from "@heroicons/react/outline";
+import {MenuIcon, SearchIcon, XIcon} from "@heroicons/react/outline";
 import { Fragment, useState } from 'react'
 import {Link} from "@inertiajs/inertia-react";
 
 export default function MobileNavBar({navigation}) {
+
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+console.log(mobileMenuOpen);
+
     return (
         <>
+
+            {/* Mobile menu and search (lg-) */}
+            <div className="flex-1 flex items-center lg:hidden ee">
+                <button type="button" className=" -ml-2 p-2 text-dark" onClick={()=>setMobileMenuOpen(!mobileMenuOpen)}>
+                    <span className="sr-only">Open menu</span>
+                    <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                </button>
+
+                {/* Search */}
+                <a href="#" className="ml-2 p-2 text-dark">
+                    <span className="sr-only">Search</span>
+                    <SearchIcon className="w-6 h-6" aria-hidden="true" />
+                </a>
+            </div>
+
+            {/* Logo (lg-) */}
+            <a href="/" className="lg:hidden">
+                <span className="sr-only">carla buaiz joias</span>
+                <img
+                    src="/img/logo.svg"
+                     alt=""
+                    className="h-20 w-auto"
+                />
+            </a>
+
             <Transition.Root show={mobileMenuOpen} as={Fragment}>
-                <Dialog as="div" className="fixed inset-0 flex z-40 lg:hidden" onClose={setMobileMenuOpen}>
+                <Dialog as="div" className="fixed inset-0 flex z-40 lg:hidden eeee" onClose={() => setMobileMenuOpen(true)}>
                     <Transition.Child
                         as={Fragment}
                         enter="transition-opacity ease-linear duration-300"
@@ -56,51 +85,21 @@ export default function MobileNavBar({navigation}) {
 
                             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                                 <div className="flow-root">
-                                    <a href="#" className="-m-2 p-2 block font-medium text-gray-900">
-                                        Create an account
-                                    </a>
+                                    <Link href={route('register')} className="-m-2 p-2 block font-medium text-gray-900">
+                                        Criar conta
+                                    </Link>
                                 </div>
                                 <div className="flow-root">
-                                    <a href="#" className="-m-2 p-2 block font-medium text-gray-900">
-                                        Sign in
-                                    </a>
+                                    <Link href={route('login')} className="-m-2 p-2 block font-medium text-gray-900">
+                                        Login
+                                    </Link>
                                 </div>
-                            </div>
-
-                            <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-                                {/* Currency selector */}
-                                <form>
-                                    <div className="inline-block">
-                                        <label htmlFor="mobile-currency" className="sr-only">
-                                            Currency
-                                        </label>
-                                        <div className="-ml-2 group relative border-transparent rounded-md focus-within:ring-2 focus-within:ring-white">
-
-                                            <div className="absolute right-0 inset-y-0 flex items-center pointer-events-none">
-                                                <svg
-                                                    aria-hidden="true"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    fill="none"
-                                                    viewBox="0 0 20 20"
-                                                    className="w-5 h-5 text-gray-500"
-                                                >
-                                                    <path
-                                                        stroke="currentColor"
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        strokeWidth="1.5"
-                                                        d="M6 8l4 4 4-4"
-                                                    />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                     </Transition.Child>
                 </Dialog>
             </Transition.Root>
+
         </>
 
     );
